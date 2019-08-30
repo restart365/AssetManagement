@@ -24,5 +24,6 @@ namespace AssetManagement.Controllers
         {
             return View();
         }
+
     }
 }
