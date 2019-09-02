@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+}
+
+<h1 style="text-align: center; margin-top: 10%">Select your role</h1>
+
+<div id="container">
+
+    <button class="btn btn-default relative-center" style="text-align: center" onclick="location.href='@Url.Action("ReadOnlyIndex","Asset")'">Manager</button>
+    <button class="btn btn-default relative-center" style="text-align: center" onclick="location.href='@Url.Action("Index","Asset")'">Administrator</button>
+</div>
+
+<style>
+    #container{
+        width: 80vh;
+        height: 60vh;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .relative-center {
+        width: 40vh;
+        height: 30vh;
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+</style>

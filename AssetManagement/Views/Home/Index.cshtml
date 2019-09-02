@@ -5,7 +5,7 @@
 <div class="jumbotron">
     <h1>Asset Management</h1>
     <p class="lead">Thank you for your time exploring this website. To start, click "Try Now"</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">TRY NOW</a></p>
+    @Html.ActionLink("TRY NOW", "Index", "Asset", new { @class = "btn btn-primary btn-lg" })
 </div>
 
 <div class="row">
@@ -29,3 +29,8 @@
         <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
     </div>
 </div>
+
+@using (Html.BeginForm("TestAdd", "Home"))
+{
+    <button type="submit">Test Add</button>
+}

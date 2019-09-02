@@ -1,0 +1,7 @@
+{"Id":"1","Name":"Jeans","Count":3,"Group":2,"UnitPrice":50.99,"TotalValue":152.97}
+{"Id":"2","Name":"Sweater","Count":6,"Group":1,"UnitPrice":30.0,"TotalValue":180.0}
+{"Id":"3","Name":"Hoody","Count":1,"Group":1,"UnitPrice":49.99,"TotalValue":49.99}
+{"Id":"4","Name":"Sweat Pants","Count":0,"Group":2,"UnitPrice":30.99,"TotalValue":0.0}
+{"Id":"5","Name":"Skirt","Count":13,"Group":2,"UnitPrice":28.0,"TotalValue":364.0}
+{"Id":"6","Name":"Long Skirt","Count":10,"Group":2,"UnitPrice":28.0,"TotalValue":280.0}
+{"Id":"0","Name":"T-Shirt","Count":30,"Group":1,"UnitPrice":20.0,"TotalValue":600.0}
