@@ -3,14 +3,14 @@
 <link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Inventory";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Welcome to Inventory Management System</h2>
 
 <div style="margin-bottom: 12px">
-    @using (Html.BeginForm("ReadOnlyIndex", "Asset", FormMethod.Get))
+    @using (Html.BeginForm("Index", "Asset", FormMethod.Get))
     {
         @Html.TextBox("SearchString", ViewBag.CurrentFilter as string, new { @id = "myInput", @type = "text", @placeholder = "Search by Name/Group/Id..." })
         <button type="submit" class="btn btn-primary" style="height: 32px">Search</button>
@@ -18,7 +18,7 @@
 </div>
 
 <div style="margin-bottom: 12px">
-    @Html.ActionLink("Clear All Filters", "ReadOnlyIndex")
+    @Html.ActionLink("Clear All Filters/Sorts", "Index")
 </div>
 
 @if (!Model.Any())
@@ -30,11 +30,11 @@ else
     <table class="table table-bordered table-hover" id="InventoryTable">
         <thead>
             <tr>
-                <td>@Html.ActionLink("Name", "ReadOnlyIndex", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })</td>
-                <td>@Html.ActionLink("Group", "ReadOnlyIndex", new { sortOrder = ViewBag.GroupSortParm, currentFilter = ViewBag.CurrentFilter })</td>
-                <td>@Html.ActionLink("Count", "ReadOnlyIndex", new { sortOrder = ViewBag.CountSortParm, currentFilter = ViewBag.CurrentFilter })</td>
-                <td>@Html.ActionLink("Unit Price", "ReadOnlyIndex", new { sortOrder = ViewBag.PriceSortParm, currentFilter = ViewBag.CurrentFilter })</td>
-                <td>@Html.ActionLink("Total Value", "ReadOnlyIndex", new { sortOrder = ViewBag.TotalPriceSortParm, currentFilter = ViewBag.CurrentFilter })</td>
+                <td>@Html.ActionLink("Name", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })</td>
+                <td>@Html.ActionLink("Group", "Index", new { sortOrder = ViewBag.GroupSortParm, currentFilter = ViewBag.CurrentFilter })</td>
+                <td>@Html.ActionLink("Count", "Index", new { sortOrder = ViewBag.CountSortParm, currentFilter = ViewBag.CurrentFilter })</td>
+                <td>@Html.ActionLink("Unit Price", "Index", new { sortOrder = ViewBag.PriceSortParm, currentFilter = ViewBag.CurrentFilter })</td>
+                <td>@Html.ActionLink("Total Value", "Index", new { sortOrder = ViewBag.TotalPriceSortParm, currentFilter = ViewBag.CurrentFilter })</td>
             </tr>
         </thead>
         @foreach (var item in Model)
@@ -52,7 +52,7 @@ else
     <br />
 
     <div style="text-align: center;">
-        @Html.PagedListPager(Model, page => Url.Action("ReadOnlyIndex", new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
+        @Html.PagedListPager(Model, page => Url.Action("Index", new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
     </div>
 
 }

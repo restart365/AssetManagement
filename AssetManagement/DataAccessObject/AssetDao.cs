@@ -20,7 +20,7 @@ namespace AssetManagement.DataAccessObject
                 {
                     foreach (var a in assets)
                     {
-                        sw.WriteLine(JsonConvert.SerializeObject(a));
+                        sw.WriteLine(a.Serialize());
                     }
                 }
             }
@@ -32,25 +32,34 @@ namespace AssetManagement.DataAccessObject
         {
             lock (LockByte)
             {
-                using (StreamReader sr = new StreamReader(HttpContext.Current.Server.MapPath("~/Data/data.txt"), true))
+                try
                 {
-                    string line;
-                    var data = new List<Asset>();
-                    while ((line = sr.ReadLine()) != null)
+                    using (StreamReader sr = new StreamReader(HttpContext.Current.Server.MapPath("~/Data/data.txt"),
+                        true))
                     {
-                        try
+                        string line;
+                        var data = new List<Asset>();
+                        while ((line = sr.ReadLine()) != null)
                         {
-                            data.Add(JsonConvert.DeserializeObject<Asset>(line));
-                        }
-                        catch
-                        {
-                            //ignored
+                            try
+                            {
+                                data.Add(Asset.Deserialize(line));
+                            }
+                            catch
+                            {
+                                //ignored
+                            }
+
                         }
 
+                        return data;
                     }
-
-                    return data;
                 }
+                catch
+                {
+                    return new List<Asset>();
+                }
+                
             }
         }
     }

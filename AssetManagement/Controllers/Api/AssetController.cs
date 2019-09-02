@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -29,6 +31,19 @@ namespace AssetManagement.Controllers.Api
             return asset;
         }
 
+        // GET /api/asset/group/1
+        [HttpGet]
+        [Route("api/asset/group/{group}")]
+        public IEnumerable<Asset> GetAsset(Group group)
+        {
+            var asset = AssetDao.ReadFromFile().Where(a => a.Group == group);
+
+            if (asset == null)
+                throw new HttpResponseException(HttpStatusCode.NotFound);
+
+            return asset;
+        }
+
         // POST /api/asset
         [HttpPost]
         public Asset CreateAsset(Asset asset)
@@ -39,7 +54,13 @@ namespace AssetManagement.Controllers.Api
             var current = AssetDao.ReadFromFile().ToList();
 
             if (asset.Id == "")
-                asset.Id = Convert.ToBase64String(Guid.NewGuid().ToByteArray());
+            {
+                var id = Convert.ToBase64String(Guid.NewGuid().ToByteArray());
+                id = id.Replace('/', '_');
+                id = id.Replace('+', '-');
+                asset.Id = id;
+            }
+            else throw new HttpResponseException(HttpStatusCode.BadRequest); //ID has to be auto assigned
 
             current.Add(asset);
 
@@ -109,7 +130,10 @@ namespace AssetManagement.Controllers.Api
 
     public class AssetPatchRequest
     {
+        [Required]
         public string Id { get; set; }
+
+        [Range(0, Double.MaxValue)]
         public int Count { get; set; }
     }
 }

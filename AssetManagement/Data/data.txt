@@ -1,7 +1,9 @@
-{"Id":"1","Name":"Jeans","Count":3,"Group":2,"UnitPrice":50.99,"TotalValue":152.97}
-{"Id":"2","Name":"Sweater","Count":6,"Group":1,"UnitPrice":30.0,"TotalValue":180.0}
-{"Id":"3","Name":"Hoody","Count":1,"Group":1,"UnitPrice":49.99,"TotalValue":49.99}
-{"Id":"4","Name":"Sweat Pants","Count":0,"Group":2,"UnitPrice":30.99,"TotalValue":0.0}
-{"Id":"5","Name":"Skirt","Count":13,"Group":2,"UnitPrice":28.0,"TotalValue":364.0}
-{"Id":"6","Name":"Long Skirt","Count":10,"Group":2,"UnitPrice":28.0,"TotalValue":280.0}
-{"Id":"0","Name":"T-Shirt","Count":30,"Group":1,"UnitPrice":20.0,"TotalValue":600.0}
+{"Id":"mdNBnr_0vUSYFJhrCEfliw==","Name":"Jeans","Count":3,"Group":2,"UnitPrice":50.99,"TotalValue":152.97}
+{"Id":"DyNAeTmAU0acoUU3D-Q7Pw==","Name":"Sweater","Count":6,"Group":1,"UnitPrice":30.0,"TotalValue":180.0}
+{"Id":"C93dgq9vR0G6sfs6MvnHvg==","Name":"Hoody","Count":1,"Group":1,"UnitPrice":49.99,"TotalValue":49.99}
+{"Id":"tT8vviLrBk6U5_-CsBsMCw==","Name":"Sweat Pants","Count":0,"Group":2,"UnitPrice":30.99,"TotalValue":0.0}
+{"Id":"1qw2UZlzMkezuJ2Kxnz7ZQ==","Name":"Skirt","Count":13,"Group":2,"UnitPrice":28.0,"TotalValue":364.0}
+{"Id":"W5z_WywsTkKI7qS9TRdJ4w==","Name":"Long Skirt","Count":10,"Group":2,"UnitPrice":28.0,"TotalValue":280.0}
+{"Id":"7nwfKP46PkS0TO2vsQWBaQ==","Name":"T-Shirt","Count":30,"Group":1,"UnitPrice":20.0,"TotalValue":600.0}
+{"Id":"ZwqDdqjxuUqimrGpCrhxdw==","Name":"Hat","Count":18,"Group":3,"UnitPrice":5.75,"TotalValue":103.5}
+{"Id":"hYh7U0eX4E6pGAni-85GyQ==","Name":"Hat","Count":3,"Group":3,"UnitPrice":5.75,"TotalValue":17.25}

@@ -8,9 +8,9 @@ namespace AssetManagement.Models
     public enum Group
     {
         NONE,
-        GROUP_A,
-        GROUP_B,
-        GROUP_C,
+        TOP,
+        BOTTOM,
+        ACCESSORY,
         OTHER
     }
 }

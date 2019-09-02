@@ -40,7 +40,7 @@ namespace AssetManagement.Controllers
             {
                 list = list.Where(s => s.Name.ToUpper().Contains(searchString.ToUpper())
                                        || s.Group.ToString().ToUpper().Contains(searchString.ToUpper())
-                                       || s.Id == searchString);
+                                       || s.Id.ToUpper().Contains(searchString));
             }
 
             // Sorting
